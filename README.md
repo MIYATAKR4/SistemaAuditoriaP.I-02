@@ -32,4 +32,11 @@ Em desenvolvimento para conclusão do Projeto Integrador II da Univesp
 
 ## Desenvolvedores
 
+- <a href="https://github.com/AdansJr"> Adans Borba </a>
 - <a href="https://github.com/arturcirino"> Artur Cirino </a>
+- <a href="https://github.com/MIYATAKR4"> Catarina Diniz </a>
+- <a href="https://github.com/"> Elisa Toma </a>
+- <a href="https://github.com/Gabii09"> Gabriela Saiki </a>
+- <a href="https://github.com/ra3lfc"> Israel Carvalho </a>
+- <a href="https://github.com/Jhanydev"> Janilucia Carmo </a>
+- <a href="https://github.com/yukaum"> Taiene Yamazaki </a>
