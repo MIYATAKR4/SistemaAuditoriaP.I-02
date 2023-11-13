@@ -1,17 +1,16 @@
 import { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PaginaSetor from "../components/PaginaSetor";
-import Signup from "../components/Sigin";
-import Login from "../components/Login";
+import Formulario from "../pages/home/Formulario";
+import Signup from "../pages/sign_up/Signup";
+import Login from "../pages/sign_in/SignIn";
+import useAuth from "../hooks/useAuth";
 
-const Private = ({ item }) => {
-    const signed = false
-
+const Private = ({Item}) => {
+    const {signed} = useAuth();
     return (
-        signed > 0 ? <item /> : <Login />
+        signed > 0 ? <Item /> : <Login />
     );
 }
-
 
 const RoutesApp = () => {
     return (
@@ -19,8 +18,8 @@ const RoutesApp = () => {
             <Fragment>
                 <Routes>
                     <Route path="/" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/setores" element={<Private item={PaginaSetor} />} /> 
+                    <Route exact path="/signup" element={<Signup />} />
+                    <Route exact path="/form" element={<Private Item={Formulario}/>} /> 
                     <Route path="*" element={<Login />} />
                 </Routes>
             </Fragment>
