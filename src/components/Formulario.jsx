@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import Pergunta from './components/Pergunta';
-import BotaoNavegacao from './components/BotaoNavegacao';
-import PaginaSetor from './components/PaginaSetor';
-import EnviarAuditoria from './components/EnviarAuditoria';
+import Pergunta from './Pergunta';
+import BotaoNavegacao from './BotaoNavegacao';
+import PaginaSetor from './PaginaSetor';
+import EnviarAuditoria from './EnviarAuditoria';
+import dadosPesagem from '../dados_pesagem';
+import dadosMassa from '../dados_massa';
 
-import dadosPesagem from './dados_pesagem';
-import dadosMassa from './dados_massa';
+import '../styles/Global.css';
 
-import './App.css';
 
 // Função para padronizar os dados
 const padronizarDados = (dados) => {
