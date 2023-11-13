@@ -28,7 +28,6 @@ const Login = () => {
   }
 
   return (
-      <div>
       <C.Container>
         <img src="public\logo.jpg" alt="Logo" style={{height:"100px", width: "200px"}} />
         <C.Content>
@@ -52,7 +51,6 @@ const Login = () => {
           </C.SignUp>
         </C.Content>
       </C.Container>
-      </div>
   )
 }
 

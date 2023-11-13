@@ -7,7 +7,7 @@ import * as C from './styles'
 
 
 const Register = () => {
-  const [register, setRegister] = useState('')
+  const [registration, setRegistration] = useState('')
   const [password, setPassword] = useState('')
   const [confirmRegister, setConfirmRegister] = useState('')
   const [error, setError] = useState('')
