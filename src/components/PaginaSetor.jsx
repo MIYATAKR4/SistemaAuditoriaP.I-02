@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const PaginaSetor = ({ setor, proxima, anterior, exibirDadosMassa }) => {
-
+  
   // UseEffect para atualizar o estilo do corpo da página e altura quando exibirDadosMassa muda
   useEffect(() => {
     // Altera o estilo de fundo com base em exibirDadosMassa
@@ -20,11 +20,12 @@ const PaginaSetor = ({ setor, proxima, anterior, exibirDadosMassa }) => {
         {/* Renderiza a imagem com base no setor */}
         <img src={setor === 'pesagem' ? '/pesagem.png' : '/massa.png'} alt="" />
       </div>
-      <div className='botoes'>
-        {/* Botões de navegação */}
-        <button className='botao' onClick={anterior}>← Anterior</button>
-        <button className='botao' onClick={proxima}>Próxima →</button>
-      </div>
+      <div className='botoes' style={{ display: 'flex', justifyContent: 'center' }}>
+      {/* Botões de navegação */}
+      {setor === 'pesagem' ? null : <button className='botao' onClick={anterior} style={{marginRight: '20px'}}>← Anterior</button>}
+      {setor === 'pesagem' ? (<button className='botao' onClick={proxima}>Iniciar →</button>) 
+      : (<button className='botao' onClick={proxima}>Próxima →</button>)}
+    </div>
     </div>
   );
 };

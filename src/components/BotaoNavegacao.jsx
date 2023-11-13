@@ -40,8 +40,8 @@ const BotaoNavegacao = ({ proxima, anterior, finalizar, perguntaAtual, totalPerg
 
   return (
     <div className='footer'>
-      <div className='botoes'>
-        <button className='botao' onClick={anterior}>← Anterior</button>
+      <div className='botoes' style={{ display: 'flex', justifyContent: 'center' }}>
+        <button className='botao' onClick={anterior} style={{marginRight: '20px'}}>← Anterior</button>
         {estaNaUltimaPergunta ? (
           <button className='botao' onClick={finalizar}>Finalizar →</button>
         ) : (
