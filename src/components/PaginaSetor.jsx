@@ -1,8 +1,13 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React from 'react'
+import useAuth from '../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const PaginaSetor = ({ setor, proxima, anterior, exibirDadosMassa }) => {
-  
+  const { signOut } = useAuth();
+  const navigate = useNavigate();
+
   // UseEffect para atualizar o estilo do corpo da página e altura quando exibirDadosMassa muda
   useEffect(() => {
     // Altera o estilo de fundo com base em exibirDadosMassa
@@ -14,6 +19,12 @@ const PaginaSetor = ({ setor, proxima, anterior, exibirDadosMassa }) => {
 
   return (
     <div>
+      {setor === 'massa' ? null : 
+      <div style={{margin:'20px'}}>
+        <button className='botao'  Text= "Sair" onClick={() => [signOut(), navigate("/")]}>
+          <u>sair</u>
+        </button>
+      </div>}
       {/* Renderiza o título com base no setor */}
       <h2 className="titulo_pergunta">{setor === 'pesagem' ? 'Setor de Pesagem' : 'Setor de Massa'}</h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>

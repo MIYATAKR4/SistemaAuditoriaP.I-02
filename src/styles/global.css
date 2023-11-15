@@ -85,6 +85,18 @@
     color: #d6d6d6;
 }
 
+.logout {
+    font-size: 1.5em;
+    border: 0;
+    background: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+.logout:hover {
+    color: #363636;
+}
+
 input[type="text"] {
     padding-left: 4px;  
 }
