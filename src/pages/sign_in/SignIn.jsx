@@ -29,8 +29,7 @@ const Login = () => {
 
   return (
       <C.Container>
-        <img src="public\logo.jpg" alt="Logo" style={{height:"100px", width: "200px"}} />
-        <C.Content>
+      <C.Content>
       <C.Label>LOGIN</C.Label>
           <Input 
             type="text"
