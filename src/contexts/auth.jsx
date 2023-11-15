@@ -3,14 +3,16 @@ import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState();
 
     useEffect(() => {
-        const userToken = localStorage.getItem('userToken');
+        const userToken = localStorage.getItem('user_token');
         const userStorage = localStorage.getItem('users_db');
 
         if (userToken && userStorage) {
-            const hasUser = JSON.parse(userStorage)?.filter((user) => user.registration === JSON.parse(userToken).registration);
+            const hasUser = JSON.parse(userStorage)?.filter(
+                (user) => user.registration === JSON.parse(userToken).registration
+            );
             if (hasUser) setUser(hasUser[0]);
         }
     }, []);
@@ -19,7 +21,7 @@ export const AuthProvider = ({ children }) => {
         const userStorage = JSON.parse(localStorage.getItem('users_db'));
         const hasUser = userStorage?.filter((user) => user.registration === registration);
 
-        if (hasUser?.lenght) {
+        if (hasUser?.length) {
             if (hasUser[0].registration === registration && hasUser[0].password === password) {
                 const token = Math.random().toString(36).substring(2);
                 localStorage.setItem('user_token', JSON.stringify({ registration, token }));
@@ -64,4 +66,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-}
+};

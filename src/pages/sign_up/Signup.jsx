@@ -7,14 +7,14 @@ import * as C from './styles'
 
 
 const Register = () => {
-  const [registration, setRegistration] = useState('')
+  const [register, setRegister] = useState('')
   const [password, setPassword] = useState('')
   const [confirmRegister, setConfirmRegister] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate();
 
-  const { signup } = useAuth();
-
+  const { signUp } = useAuth();
+ 
   const handleRegister = () => {
     if (!register | !password | !confirmRegister) {
       setError('Preencha todos os campos');
@@ -24,7 +24,7 @@ const Register = () => {
       return;
     }
 
-    const res = signup(register, password);
+    const res = signUp(register, password);
     if (res) {
       setError(res);
       return;
